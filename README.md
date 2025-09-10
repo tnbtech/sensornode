@@ -20,4 +20,5 @@ If you want to know more about SensorNode, you can check out the Kickstarter pro
 If you want to read even more about SensorNode, you can find more info on the TNB Technologies website SensorNode section [here](https://www.tnbtechnologies.com/sensornode).
 If you have questions/comments, you can email me at tom@tnbtechnologies.com
 Good luck, and thanks for your interest in SensorNode!
+
 Tom Berarducci
