@@ -851,7 +851,7 @@ def main_loop_code(ipAd,reboot_count,jsonDataStruct={}):
     #	Dry Contact Sensor Settings
     #
     contactSensorFriendlyName = getSettingValueFromSettingsJson(jsonDataStruct,'contact_friendly_name',HA_CONTACT_SENSOR_NAME_DEFAULT)
-    contact_sensor_url_suffix = getSettingValueFromSettingsJson(jsonDataStruct,'HA_CONACT_SENSOR_URL_BASE',HA_CONTACT_SENSOR_URL_BASE)
+    contact_sensor_url_suffix = getSettingValueFromSettingsJson(jsonDataStruct,'HA_CONTACT_SENSOR_URL_BASE',HA_CONTACT_SENSOR_URL_BASE)
     contactSensorInactiveValue = getSettingValueFromSettingsJson(jsonDataStruct,'CONTACT_SENSOR_INACTIVE_VALUE',CONTACT_SENSOR_INACTIVE_VALUE_DEFAULT)
     contactSensorActiveValue = getSettingValueFromSettingsJson(jsonDataStruct,'CONTACT_SENSOR_ACTIVE_VALUE',CONTACT_SENSOR_ACTIVE_VALUE_DEFAULT)
     contactSensorOnlineValue = getSettingValueFromSettingsJson(jsonDataStruct,'CONTACT_SENSOR_ONLINE_VALUE',CONTACT_SENSOR_ONLINE_VALUE_DEFAULT)

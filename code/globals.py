@@ -5,7 +5,7 @@
     
 '''
 
-VERSION = "1.06"
+VERSION = "1.061"
 
 AP_PW = "Sensor.N0de"
 

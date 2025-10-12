@@ -86,6 +86,24 @@ switch = digitalio.DigitalInOut(board.GP14)
 switch.direction = digitalio.Direction.INPUT
 switch.pull = digitalio.Pull.UP
 
+def signalErrorCondition():
+    #
+    #	if SensorNode cannot resolve an issue - it will call this func
+    #	and blink leds 3 times and pause 1 sec, repeat 3 times
+    #
+    REPEAT_TIMES = 3
+    def blinkLeds(numBlink=1):
+        if numBlink < 1: numBlink = 1
+        if numBlink > 10: numBlink = 10
+        for index in range(numBlink):
+            setLeds(True)
+            time.sleep(0.1)
+            setLeds(False)
+            time.sleep(0.1)
+    for index in range(REPEAT_TIMES):
+        blinkLeds(3)
+        time.sleep(1)
+
 def getBoolSetting(settingName,settingDefault,jsonSettingData):
     #
     #	establishes boolean setting from setting file or default
@@ -494,12 +512,27 @@ def getAPSSID():
     #	forms unique id for pico ap
     #
     myMac = micro_cpu.uid
+    
+    #
+    #	Due to limitation of Wifi Stack, must limit
+    #	AP SSID to 32 chars - so MAX_UID_SIZE is used
+    #	to guaranteed we are within that limit
+    #
+    MAX_UID_SIZE = 8
         
     myUniqueId = ""
     for index in range(len(myMac)):
         myUniqueId += str(myMac[index])
-            
-    newAPssid = AP_SSID_BASE+myUniqueId
+        
+    if len(myUniqueId) > MAX_UID_SIZE:
+        # only truncate if necessary
+        newID = ""
+        for index in range(MAX_UID_SIZE):
+            stringIndex = len(myUniqueId)-MAX_UID_SIZE+index
+            newID += str(myUniqueId[stringIndex])
+        newAPssid = AP_SSID_BASE+newID
+    else:
+        newAPssid = AP_SSID_BASE+myUniqueId
     
     return newAPssid
 

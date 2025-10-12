@@ -71,7 +71,7 @@ def newBasePage():
     <body>
     <h1>SensorNode Configuration Server</h1>
     <p class="dotted">{deviceName}</p>
-    <p class="dotted">ID: {accessPointID}</p>
+    <p class="dotted">SSID: {accessPointID}</p>
     <p class="dotted">SW Version: {VERSION}</p>
     <h4>Sensor Settings<h4>
     <a href='/contact'>Connector S1 - Contact Sensor Settings</a>

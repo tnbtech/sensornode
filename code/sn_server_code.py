@@ -16,6 +16,7 @@
 
 from sensorNodeUtils import setHtmlBuffer,getHtmlBuffer,setLeds,getAPSSID,wd_feed,setSettingsStruct,getWifiCreds,Timer,countLedTicks,addToSettingsStruct,getIntFromString
 from sensorNodeUtils import restartIntoStationMode,restartIntoAPMode,writeDataToSettings,checkValue,getSettingsStruct,getForceAPModePinValue,writeSettingsFile
+from sensorNodeUtils import signalErrorCondition
 from globals import AP_PW, LED_BLINK_DURATION_AP_ENABLED,WAIT_TIME_TICK,WIFI_RETRY_DURATION,S2_SENSOR_CONFIGURATION,STATUS_UPDATE_INTERVAL_MINIMUM,STATUS_UPDATE_INTERVAL_MAXIMUM
 from globals import STATUS_UPDATE_INTERVAL_DEFAULT
 import socketpool
@@ -593,6 +594,7 @@ def start_AP(ssid,pw):
             wifi.radio.start_ap(ssid=ssid,password=pw)
         except Exception as e:
             print("\n\n---> ERROR Attempting to start AP - Exception: ",e)
+            signalErrorCondition()
             restartIntoAPMode()
     print("AP Started")
 
@@ -606,6 +608,7 @@ def goIntoAccessPointMode():
     #print("\n\nInside goIntoAccessPointMode...\n\n")
     setLeds(True)
     mySSID = getAPSSID()
+    print("---> Inside goIntoAccessPointMode - mySSID = ",mySSID,"\n\n")
     wd_feed()
     start_AP(mySSID,AP_PW)  
     wd_feed()
