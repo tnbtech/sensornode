@@ -5,6 +5,8 @@ This code is intended to be used with the SensorNode PC board, which is part of 
 
 If you want to buy your own SensorNode you can buy it [here](https://www.tindie.com/products/tnbtechnologiesllc/sensornode-for-home-assistant/?pt=ac_prod_search).
 
+You can access all the SensorNode documentation [here](https://www.tnbtechnologies.com/sensornode/ksbacker2025).
+
 However, you don't need to use the SensorNode board if you don't want to. The code will run on a Raspberry Pi Pico microcontroller without the PC board, albeit with limitations without the PC board circuitry. 
 
 The code is intended to run using CircuitPython. The exact version of CircuitPython (and related libraries) tested with this code is included in this repo. To avoid issues, **please use this version**. The intended target processor is the **Pico 1W**. Pico 2W may work, but it may require upgrades to the version of CircuitPython and libraries. 
