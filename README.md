@@ -1,4 +1,4 @@
-﻿# SensorNode
+﻿# SensorNode 1.0
 ***Easily add common sensors to Home Assistant home automation systems.***
 
 This code is intended to be used with the SensorNode PC board, which is part of a DIY Kit launched as a [Kickstarter project in Summer 2025](https://www.kickstarter.com/projects/tomberarducci/sensornode-a-diy-sensor-platform-for-home-assistant). 
